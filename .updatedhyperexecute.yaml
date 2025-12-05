@@ -1,0 +1,149 @@
+version: "0.1"
+user: abhijitnikam03
+key: '********'
+testSuites: [npx playwright test --config=playwright.config.js --headed]
+pre: [npm ci, npx playwright install --with-deps]
+preDirectives:
+    commands: [npm ci, npx playwright install --with-deps]
+    maxRetries: 0
+    shell: ""
+    workingDirectory: ""
+post: ['echo " Tests completed successfully on ${{ runson }}"', echo " Collecting artifacts...", dir playwright-report, dir test-results]
+postDirectives:
+    commands: ['echo " Tests completed successfully on ${{ runson }}"', echo " Collecting artifacts...", dir playwright-report, dir test-results]
+    shell: ""
+    workingDirectory: ""
+env:
+    LT_ACCESS_KEY: LT_hKl7qpVCxBvfH4Ubfcoglfydny0YCEimN8cYrptmS3ZcLxR
+    LT_USERNAME: abhijitnikam03
+runson: win
+tunnelOpts:
+    testsPerTunnel: 10
+jobID: eb6b519f-9e55-4dca-90f4-f2715d63489a
+codeDirectory: PlaywrightProject
+report: true
+framework:
+    name: ""
+    flags: []
+    discoveryFlags: []
+    discoveryMode: ""
+    discoveryType: ""
+    runnerFlags: []
+    workingDirectory: ""
+    isTestNGXMLSuite: false
+    defaultReports: false
+    args:
+        appPath: ""
+        testSuitePath: ""
+        xcTestPlanPath: ""
+        shards:
+            mappings: []
+        filters:
+            attributes: []
+        devices: []
+        deviceSelectionStrategy: ""
+        appId: ""
+        testSuiteAppId: ""
+        xcTestPlanId: ""
+        skipXMLOnRun: false
+        skipInstall: false
+        disableReleaseDevice: false
+        platformName: ""
+        isRealMobile: null
+        avoidAppLaunch: false
+        queueTimeout: 0
+        uninstallPreviousBuild: false
+        language: ""
+        locale: ""
+        preservedDevice: false
+        fixedIP: ""
+        minorOsVersion: false
+        playwrightRD: false
+        mobileDC: null
+        skipUninstallPreviousBuild: false
+        isVirtualDevice: false
+        mitmProxy: false
+        networkHar: false
+        artifacts: false
+        otherApps: []
+        customData: {}
+        smartUI: null
+        darkMode: false
+        testRemarks: false
+        autoGrantPermissions: false
+        networkLogsOptions:
+            captureContent: false
+            excludeHosts: []
+            includeHosts: []
+        enableResultBundle: false
+        enableBluetooth: false
+    additional_args: null
+    licenseKey: ""
+    userdefinediscovery: false
+    toscaArgs: null
+    version: ""
+    downloadURL: ""
+    baseCommand: ""
+cypress: false
+betaFeature:
+    setPartiallyCompletedAsCompleted: false
+testType: playwright
+triggerSource: CLI
+combineTasksInMatrixMode: false
+captureScreenRecordingForScenarios: false
+maxRetriesPreSteps: 0
+triggerMode: false
+sourcePayload:
+    verifySSL: true
+collectLocalGitData: true
+dynamicAllocation: false
+appium: null
+platformConfig: null
+differentialUpload:
+    enabled: false
+    ttlHours: null
+    forcedDisabled: false
+project:
+    id: 01KBQP0Z4J7CXYTT797HCF13G4
+    name: LambdaTest Default Project
+    type: custom
+meta: {}
+alwaysRunPostSteps: false
+errorCategorizedOnFailureOnly: false
+testDiscoveryResultV3: []
+storageType: ""
+localHTTPProxy: ""
+regionConfig:
+    vm: []
+    storage:
+        region: ""
+        enabled: false
+        name: ""
+        platform: azure
+waitForArtefactsUpload: false
+unzipPayload: false
+projectpath: ""
+accessibilityJob: false
+globalPre:
+    mode: ""
+    commands: []
+    maxRetries: 0
+    shell: ""
+    workingDirectory: ""
+    completed: false
+    runson: ""
+    cache: false
+    yamlPath: null
+    type: ""
+    location: ""
+globalPost:
+    mode: ""
+    commands: []
+    shell: ""
+    workingDirectory: ""
+    completed: false
+    runson: ""
+slackChannel: ""
+whiteLabelProductTag: ""
+sprofilePath: ""
+ltOptions: {}

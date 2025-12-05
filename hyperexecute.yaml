@@ -1,0 +1,29 @@
+version: 0.1
+runson: win
+
+env:
+  LT_USERNAME: ${LT_USERNAME}
+  LT_ACCESS_KEY: ${LT_ACCESS_KEY}
+
+pre:
+  - npm ci
+  - npx playwright install --with-deps
+
+testSuites:
+  - npx playwright test --config=playwright.config.js --headed
+
+post:
+  - echo " Tests completed successfully on ${{ runson }}"
+  - echo " Collecting artifacts..."
+  - dir playwright-report
+  - dir test-results
+
+artifacts:
+  - path: playwright-report
+    type: html
+  - path: test-results
+    type: logs
+  - path: videos
+    type: video
+
+report: true
